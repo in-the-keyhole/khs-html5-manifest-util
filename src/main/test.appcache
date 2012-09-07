@@ -1,0 +1,8 @@
+CACHE MANIFEST # 2012-9-4:v 22
+# Explicitly cached 'master entries 
+CACHE:
+# Generated, entries don't edit between {begin}..{end} markers
+#{begin}
+#{end}
+NETWORK:
+FALLBACK:
