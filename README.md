@@ -8,7 +8,7 @@ More information about off line HTML5 support checkout
 Features
 --------
  * Scans web project for html,js,css,png,etc... generates HTML5 application cache file
- * Default automatically senses for document root
+ * Automatically senses for document root
  * Preserves manual editing of cache file
  * Options can be specified to override default options
 
