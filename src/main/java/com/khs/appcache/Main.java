@@ -27,6 +27,8 @@ public class Main {
 	public static final String FILE_OPTION = "-f";
 	public static final String DOC_ROOT_OPTION = "-d";
 	public static final String HELP_OPTION = "?";
+	public static final String INFO = "Copyright 2012, Keyholesoftware LLC";
+	public static final String VERSION = "V 1.0";
 	
 	/**
 	 * @param args
@@ -53,7 +55,9 @@ public class Main {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	
+		}
+		log(INFO);
+		log(VERSION);
 		log("Scanning for resource files in: "+p);
 		
 		collector.collect(filesToCache);

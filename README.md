@@ -26,20 +26,63 @@ Usage (Run from a web project folder):
 
 Output: 
 
-	file named manifest.appcache will be generated in default document root folder 
-
-
+	file named MANIFEST.APPCACHE will be generated in document root folder 
+	example contents show below...
+	
+	CACHE MANIFEST # 2012-9-6:v 12.36.11
+	# Explicitly cached 'master entries 
+	CACHE:
+	# Generated, entries don't edit between {begin}..{end} markers
+	#{begin}
+	test.css
+	test.html
+	test.js
+	test.png
+	#{end}
+	NETWORK:
+	FALLBACK:
+	
 Usage Options (Specify manifest file name and doc root)
 
-
+		java -jar html5manifest.jar -f example.appcache -d /src/main/webapp
 
 
 Maven Usage
 -----------
 
+Apply the following plugin to your POM.XML Plugins section, manifest file will be generated during build phase
+
+	<plugin>
+         <groupId>org.codehaus.mojo</groupId>
+         <artifactId>exec-maven-plugin</artifactId>
+         <version>1.2.1</version>  
+          <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                </execution>
+            </executions>
+                
+          <configuration>
+                <mainClass>com.khs.appcache.Main</mainClass>
+                    <arguments>
+                        <argument>argument1</argument>
+                    </arguments>
+                </configuration> 
+           		 </plugin>
+      		       		
+    	</plugins>
 
 
+Add the following dependency to your POM.XML <dependencies> section
 
+	<dependency>
+   		<groupId>org.apache.maven</groupId>
+   		<artifactId>maven-plugin-api</artifactId>
+  		 <version>2.0</version>
+	</dependency>
 
 
 
