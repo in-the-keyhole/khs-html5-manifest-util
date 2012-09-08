@@ -3,7 +3,7 @@ khs-html5-manifest-util
 
 Scans web document root folder and generates a HTML5 cache manifest file for OFF LINE operation
 
-More information about off line HTML5 support checkout 
+More information about off line HTML5 support checkout http://keyholesoftware.wordpress.com
 
 Features
 --------
@@ -50,7 +50,7 @@ Usage Options (Specify manifest file name and doc root)
 Maven Usage
 -----------
 
-Apply the following plugin to your POM.XML Plugins section, manifest file will be generated during build phase
+Apply the following plugin to your POM.XML Plugins section, manifest file will be generated during package phase
 
 	<plugin>
          <groupId>org.codehaus.mojo</groupId>
