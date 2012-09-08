@@ -24,13 +24,18 @@ import java.util.List;
 public class FileCollector {
 
 	File file = null;
-	String docRoot = null;
+	public String docRoot = null;
+	boolean docRootFound;
 
 	static String[] extensions = Constants.extensions;
 
 	public FileCollector(String dr,File f) {
 		file = f;
-		this.docRoot = dr.toLowerCase();
+		if (dr != null) {
+			docRootFound = true;
+			this.docRoot = dr.toLowerCase();
+		}
+	
 	}
 
 	public void collect(List<String> files) {
@@ -46,7 +51,15 @@ public class FileCollector {
 		} else {
 			try {
 				String path = f.getCanonicalPath().toLowerCase();
-				if (hasExtension(f.getName()) && path.indexOf(docRoot) >=0   ) {
+				if (!docRootFound) {
+					if (hasExtension(f.getName())) {
+						docRoot = stripFileName(f.getCanonicalPath()).toLowerCase();
+						docRootFound = true;
+					}
+					
+				}
+				
+				if (hasExtension(f.getName()) && docRootFound && path.indexOf(docRoot) >= 0 ) {		
 					files.add(path);
 				}
 			} catch (IOException e) {
@@ -55,6 +68,11 @@ public class FileCollector {
 
 		}
 
+	}
+	
+	private String stripFileName(String file) {
+		int index = file.lastIndexOf(File.separator);
+		return file.substring(0,index);		
 	}
 
 	private boolean hasExtension(String file) {

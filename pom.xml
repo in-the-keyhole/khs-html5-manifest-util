@@ -4,7 +4,7 @@
   <artifactId>khs-app-cache-util</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <build>
-      <finalName>files</finalName>  
+      <finalName>html5manifest</finalName>  
       
      <plugins>
       <plugin>

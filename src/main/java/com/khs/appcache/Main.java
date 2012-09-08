@@ -55,10 +55,11 @@ public class Main {
 			e.printStackTrace();
 		}	
 		log("Scanning for resource files in: "+p);
-		log("Will collect files located in docroot folder: "+docRoot);
+		
 		collector.collect(filesToCache);
+		log("Files collected in docroot folder: "+collector.docRoot);
 		log("Collected "+filesToCache.size()+" files with extensions of "+display(Constants.extensions));
-		ManifestWriter writer = new ManifestWriter(docRoot,cacheFile);
+		ManifestWriter writer = new ManifestWriter(collector.docRoot,cacheFile);
 		writer.write(filesToCache);
 		log("Cache File: "+cacheFile+" written");
 
@@ -103,7 +104,7 @@ public class Main {
 	
 	private static String docRoot(String[] args) {
 		
-        	String result = "src/main/webapp/";
+        	String result = null;
 			if (args.length > 0) {	
 				int index = findIndex(DOC_ROOT_OPTION,args);
 				if (index >= 0) {			
@@ -124,9 +125,6 @@ public class Main {
 			String f = s.substring(pos + docroot.length());
 			System.out.println(f);
 		}
-		
-		
-	
 		
 	}
 	
