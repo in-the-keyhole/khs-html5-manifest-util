@@ -71,9 +71,9 @@ Apply the following plugin to your POM.XML Plugins section, manifest file will b
                         <argument>argument1</argument>
                     </arguments>
                 </configuration> 
-           		 </plugin>
+           </plugin>
       		       		
-    	</plugin>
+    	
 
 
 Add the following dependency to your POM.XML <dependencies> section
