@@ -73,7 +73,7 @@ Apply the following plugin to your POM.XML Plugins section, manifest file will b
                 </configuration> 
            		 </plugin>
       		       		
-    	</plugins>
+    	</plugin>
 
 
 Add the following dependency to your POM.XML <dependencies> section
